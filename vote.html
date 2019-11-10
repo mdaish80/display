@@ -1,0 +1,39 @@
+<html>
+	<body>
+	<input type="text" id="age" maxlength="2" size="15" placeholder="Enter Your Age" /></br>
+	<p><h3>Are you indian : indian for 1 Other for 2</h3></p>
+	<input type="radio" name="nationlity" id="nal" value="Yes" />Yas
+	<input type="radio" name="nationlity" id="nal" value="No" />No
+	</br>
+	<p><h3>Have You Voter Id Cord : Yes for 1 No for 2</h3></p>
+	<input type="radio" name="voterid" id="voterid" value="Yes" />Yes
+	<input type="radio" name="voterid" id="voterid" value="No" />No
+		<script>
+			function vote()
+			{
+				var age,nal,voterid;
+					age=document.getElementById("age").value;
+				if(age>=18)
+				{
+					nal=document.getElementById("nal").value;
+					if(nal=='Yes')
+					{
+						voterid=document.getElementById("voterid").value;
+						if(voterid=='Yes')
+						{
+							document.getElementById("vote").innerHTML = "Eligible For Vote";
+						}
+						else
+							document.getElementById("vote").innerHTML = "Not Eligible For Vote : Your Don't Have Voter Id";
+					}
+					else
+						document.getElementById("vote").innerHTML = "Not Eligible For Vote : You are Not Indian";
+				}
+				else
+					document.getElementById("vote").innerHTML = "Not Eligible For Vote : Your Age Is Less Then 18 year";
+			}
+		</script></br></br>
+		<input type="button" onclick="vote()" value="submit" />
+	<h1><font color="red"><p id="vote"></p></font></h1>
+	</body>
+</html>
